@@ -1,0 +1,33 @@
+{
+    "editor.rulers": [160],
+    "prettier.printWidth": 160,
+    "java.format.comments.line.length": 160,
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.checkstyle.configuration": "${workspaceFolder}/build-config/checkstyle/checkstyle.xml",
+    "java.checkstyle.version": "10.3.3",
+    "java.checkstyle.enabled": true,
+    "java.format.enabled": true,
+    "java.completion.importOrder": ["com.ebay", "", "java", "#"],
+    "java.imports.organizationStrategy": "intellij",
+    "java.imports.staticAfterRegular": true,
+    "java.imports.separateGroups": true,
+    "java.sources.organizeImports.starThreshold": 99,
+    "java.sources.organizeImports.staticStarThreshold": 99,
+    "java.project.importOnFirstTimeStartup": "automatic",
+    "java.cleanup.actions": ["organize_imports", "sort_members"],
+    "java.codeAction.sortMembers.avoidVolatileChanges": false,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "never",
+        "source.fixAll": "never"
+    },
+    "java.implementationsCodeLens.enabled": true,
+    "java.referencesCodeLens.enabled": true,
+    "java.jdt.ls.lombokSupport.enabled": true,
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms256m -Xlog:disable",
+    "java.test.config": {
+        "workingDirectory": "${workspaceFolder}"
+    },
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.test.defaultConfig": "default",
+    "java.test.editor.enableShortcuts": true
+}

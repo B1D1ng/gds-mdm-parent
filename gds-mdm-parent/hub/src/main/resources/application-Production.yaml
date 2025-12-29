@@ -1,0 +1,276 @@
+telemetry.sendTelemetryDataEnabled: true
+cos-token.Scopes: "https://api.ebay.com/oauth/scope/@public"
+core-auth.uri-prefixes: /noAuth
+ginger-client.myService.myClient.endpointUri: "http://localhost:8080/"
+logger.logback-config: "classpath:com/ebay/kernel/logging/autoconfigure/logback/logback-default.xml"
+standardsMap.error.3: v1
+
+# See: https://github.corp.ebay.com/raptor-io-components/raptor-opentracing-cal-component/blob/master/docs/CALOptimization.md
+# You don't need to specify this property if default value is OK for you
+# opentracing.cal-sample-rate=0.01
+
+corsfilter:
+  allowed-http-headers: "*"
+
+logging:
+  pattern:
+    console: "%d{MMM-dd HH:mm:ss} %clr(%-5level) %clr(%logger{36}){cyan}.%M - ln %line - %msg%n"
+    file: "%d{MMM-dd HH:mm:ss} %clr(%-5level) %clr(%logger{36}){cyan}.%M - ln %line - %msg%n"
+  file:
+    name: "logs/mdm-service.log"
+  level:
+    com.ebay.behavior.gds.mdm: INFO
+    com.ebay.standards.filter.cors: WARN
+    com.ebay.fount.fountclient: ERROR
+    com.ebay.globalenv.domain.rt: ERROR
+    org.apache.catalina.loader.WebappClassLoaderBase: ERROR
+    io.opentelemetry.exporter.internal.grpc.UpstreamGrpcExporter: ERROR
+    com.ebay.marketplace.services.esamsservice.esamsservice.gen: OFF
+    com.ebay.raptor.configbean.impl.configuration.dao.rt.ConfigurationCategoryXmlDAO: OFF
+
+controller:
+  staging-enabled: true
+  production-enabled: true
+
+server:
+  compression:
+    enabled: true
+    mime-types: "application/json,application/xml"
+    min-response-size: 1024
+
+datasource:
+  env: prod
+  app-name: cjsmdm
+  logical-host: mdmcjsmyhost
+
+spring:
+  sql:
+    init:
+      mode: never
+
+  jpa:
+    show-sql: false
+
+    hibernate:
+      ddl-auto: none
+
+    properties:
+      hibernate:
+        format_sql: false
+      jdbc:
+        time_zone: UTC
+
+  mail:
+    host: mxrc.vip.ebay.com
+    port: 25
+    protocol: smtp
+    username: "DL-eBay-trk-onbrdg-tool-dev@ebay.com"
+    default-encoding: UTF-8
+
+  thymeleaf:
+    cache: true
+    check-template: true
+    encoding: UTF-8
+
+governance:
+  admins: "vsergeev,akaskurthy"
+  moderators: "ropenmetsa,lokcheng,knadimpalli,xueyichen,akaskurthy,vsergeev,feshao,zhiyuawang,jiawqin,yimikong,kwang10,ydrozd,yimhuang,tneuwerth,natfrost,lmanne"
+  actions:
+    submit_for_review:
+      subject: "Plan submit for review"
+      template: plan_submit_email_content.tm
+    approve:
+      subject: "Plan approved by governance"
+      template: plan_approve_email_content.tm
+    reject:
+      subject: "Plan rejected"
+      template: plan_reject_email_content.tm
+
+udc:
+  enable: true
+  env: PRODUCTION
+  data-source: cjs
+
+sam:
+  fidelius:
+    - domain: esAuth
+      name: username
+      path: "/pmsvc/site/tracking/serviceaccount/username"
+
+    - domain: esAuth
+      name: password
+      path: "/pmsvc/site/tracking/serviceaccount/password"
+
+sitesso:
+  enable: false
+  oidc-auth-redirect-url: "https://cjsmdm.stratus.qa.ebay.com/cjs/mdm/v1/site-sso/callback"
+  session-patronus-key-ref: "/cjsmdm/sitesso-session-key"
+  filter-login-url: "/cjs/mdm/v1/site-sso/login"
+  filter-logout-url: "/cjs/mdm/v1/site-sso/logout"
+  oidc-scopes: "openid, cjsmdm"
+  filter-allowed-cross-domains: "https://cjsmdm1.vip.ebay.com/cjs/mdm/v1/site-sso/callback, https://cjsportal.muse.vip.ebay.com/site-sso/callback"
+
+signal-migration-job:
+  hourly:
+    enabled: true
+    cron: "0 0 0/1 * * ?"
+    range: 70m
+  custom:
+    enabled: false
+    cron: "0 0 10 * * TUE"
+    range: 6000d
+
+hadoop:
+  enable: true
+  config:
+    core: classpath:apollo/core-site.xml
+    hdfs: classpath:apollo/hdfs-site.xml
+  kite:
+    server-endpoint : "https://kite2.vip.ebay.com"
+    keystone-api-key-path: "/pmsvc/site/tracking/kitekeystoneapi/key"
+    keystone-api-secret-path: "/pmsvc/site/tracking/kitekeystoneapi/secret"
+    krb5-conf-location: /tmp/b_trk_krb5.conf
+    user-principal: b_trk@PROD.EBAY.COM
+  hive:
+    driver-name: org.apache.hive.jdbc.HiveDriver
+    carmel-url: jdbc:hive2://hermes.prod.vip.ebay.com:10001/default;principal=b_carmel/hermes.prod.vip.ebay.com@PROD.EBAY.COM;ssl=true
+    krb5-ticket-cache-location-prefix: /tmp/krb5cc_
+  hdfs:
+    path: "viewfs://apollo-rno/apps/b_trk/gds/metadata/"
+
+ginger-client:
+  museauth:
+    endpointUri: https://auth.muse.vip.ebay.com/api
+    connectTimeout: 20000
+    readTimeout: 20000
+    maxRetryCount: 3
+    properties: ebay.cos.enabled=false
+
+  siteSsoService:
+    siteSsoClient:
+      endpointUri: https://siteiam.vip.ebay.com
+      readTimeout: 30000
+      maxRetryCount: 4
+
+  patronusService:
+    patronusClient:
+      endpointUri: https://patronus-tcp.vip.ebay.com/v1/api
+      readTimeout: 30000
+      maxRetryCount: 4
+
+  infohubService.esauthClient:
+    endpointUri: https://esauth.vip.ebay.com/rest/api/services
+    connectTimeout: 20000
+    readTimeout: 20000
+    maxRetryCount: 3
+    properties: ebay.cos.enabled=false
+
+  infohubService.infohubClient:
+    endpointUri: https://infohub.vip.ebay.com/rest/api/
+    connectTimeout: 20000
+    readTimeout: 50000
+    maxRetryCount: 3
+    properties: ebay.cos.enabled=false
+
+  pmsvc:
+    endpointUri: https://pmsvc.vip.ebay.com/pmsvc/
+    connectTimeout: 20000
+    readTimeout: 50000
+    maxRetryCount: 3
+    properties: ebay.cos.enabled=false
+
+  udc.metadata:
+    endpointUri: https://datagov.vip.ebay.com/api/v1/metadata/
+    connectTimeout: 20000
+    readTimeout: 50000
+    maxRetryCount: 3
+    properties: ebay.cos.enabled=false
+
+  gds-mdm.staging:
+    endpointUri: https://cjsmdm4.vip.qa.ebay.com/cjs/mdm/v1/
+    connectTimeout: 20000
+    readTimeout: 50000
+    maxRetryCount: 3
+    properties: ebay.cos.enabled=false
+
+  legacyMdmService.legacyMdmClient:
+    endpointUri: https://cjs-mdm.epic.vip.ebay.com/data-service/api
+    connectTimeout: 20000
+    readTimeout: 50000
+    maxRetryCount: 3
+    properties: ebay.cos.enabled=false
+
+  controlPlaneManager:
+    endpointUri: https://gdscontrolplanesvc2.vip.ebay.com/api/v1/requests
+    connectTimeout: 60000
+    readTimeout: 30000
+    maxRetryCount: 1
+    properties: ebay.cos.enabled=false
+
+  udcContractMetadata:
+    endpointUri: https://dgcontracts.vip.ebay.com
+    connectTimeout: 60000
+    readTimeout: 60000
+    maxRetryCount: 1
+    properties: ebay.cos.enabled=false
+
+  decCompiler:
+    endpointUri: https://deccompiler.vip.ebay.com/compilersvc/v1
+    connectTimeout: 10000
+    readTimeout: 30000
+    maxRetryCount: 1
+    properties: ebay.cos.enabled=false
+
+cache:
+  reload-cron: "0 0/10 * * * ?" # every 10 minutes
+
+  caches:
+    - name: authToken
+      expire-after-access-minutes: 60
+      initial-capacity: 250
+      max-size: 250
+
+    - name: esAuthToken
+      expire-after-write-minutes: 10
+      initial-capacity: 1
+      max-size: 2
+
+    - name: jiraProject
+      expire-after-access-minutes: 182
+      initial-capacity: 500
+      max-size: 1000
+
+    - name: allJiraProjects
+      expire-after-write-minutes: 182
+      initial-capacity: 1
+      max-size: 2
+
+    - name: allUsers
+      expire-after-write-minutes: 182
+      initial-capacity: 1
+      max-size: 2
+
+    - name: eventType
+      expire-after-write-minutes: 360
+      initial-capacity: 100
+      max-size: 1000
+
+    - name: allLegacySignals
+      expire-after-write-minutes: 182
+      initial-capacity: 2
+      max-size: 10
+
+    - name: allStagedSignals
+      expire-after-write-minutes: 182
+      initial-capacity: 10
+      max-size: 100
+
+    - name: allStagingSignalsLatestVersions
+      expire-after-write-minutes: 182
+      initial-capacity: 10
+      max-size: 100
+
+    - name: allProductionSignalsLatestVersions
+      expire-after-write-minutes: 182
+      initial-capacity: 10
+      max-size: 100

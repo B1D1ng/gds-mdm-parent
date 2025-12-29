@@ -1,0 +1,13 @@
+2024-07-01 14:34:41 WARN  c.e.r.c.JsonUpgradeConfiguration.apply:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule
+2024-12-26 14:53:48 WARN c.e.r.c.JsonUpgradeConfiguration.apply:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule
+2025-01-22 00:27:32 WARN  c.e.r.c.JsonUpgradeConfiguration.apply:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule
+2025-02-06 09:12:00 WARN c.e.r.c.JsonUpgradeConfiguration.apply:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule
+2025-03-06 09:01:05 WARN  c.e.r.c.JsonUpgradeConfiguration.apply:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule
+2025-04-01 11:14:01 WARN  c.e.r.c.JsonUpgradeConfiguration.apply:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule
+2025-05-06 12:34:35 WARN  c.e.r.c.JsonUpgradeConfiguration.apply:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule
+2025-06-05 09:02:26 WARN  c.e.r.c.JsonUpgradeConfiguration.$anonfun$ruleInstances$2:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule
+2025-07-03 09:03:32 WARN  c.e.r.c.JsonUpgradeConfiguration.$anonfun$ruleInstances$2:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule
+2025-09-02 01:37:29 WARN  c.e.r.c.JsonUpgradeConfiguration.$anonfun$ruleInstances$2:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule
+2025-09-04 09:01:42 WARN  c.e.r.c.JsonUpgradeConfiguration.$anonfun$ruleInstances$2:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule
+2025-10-02 09:13:38 WARN  c.e.r.c.JsonUpgradeConfiguration.$anonfun$ruleInstances$2:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule
+2025-11-06 09:11:42 WARN  c.e.r.c.JsonUpgradeConfiguration.$anonfun$ruleInstances$2:61 - com.ebay.uaas.raptor.rule.RaptorPlatformVersionUpdateRule

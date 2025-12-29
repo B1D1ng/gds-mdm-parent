@@ -1,0 +1,45 @@
+<included>
+    <appender name="FILE-APPENDER"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/mdm-service.log</file>
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>10MB</maxFileSize>
+        </triggeringPolicy>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/signal%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>9</maxIndex>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{MMM-dd HH:mm:ss} %-5level [%thread] %logger{36}.%M - ln %line - %msg%n</pattern>
+            <!-- false improves logging throughput -->
+            <immediateFlush>true</immediateFlush>
+        </encoder>
+    </appender>
+
+    <logger name="com.ebay.behavior.gds.mdm" level="INFO" additivity="false">
+        <appender-ref ref="FILE-APPENDER"/>
+    </logger>
+    <logger name="com.ebay.standards.filter.cors" level="WARN" additivity="false">
+        <appender-ref ref="FILE-APPENDER"/>
+    </logger>
+    <logger name="com.ebay.fount.fountclient" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-APPENDER"/>
+    </logger>
+    <logger name="org.hibernate.SQL" level="INFO" additivity="false">
+        <appender-ref ref="FILE-APPENDER"/>
+    </logger>
+    <logger name="org.apache.catalina.loader.WebappClassLoaderBase" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-APPENDER"/>
+    </logger>
+    <logger name="io.opentelemetry.exporter.internal.grpc.UpstreamGrpcExporter" level="ERROR" additivity="false">
+        <appender-ref ref="FILE-APPENDER"/>
+    </logger>
+    <logger name="com.ebay.marketplace.services.esamsservice.esamsservice.gen" level="OFF" additivity="false">
+        <appender-ref ref="FILE-APPENDER"/>
+    </logger>
+    <logger name="com.ebay.kernel.converter.DateTypeConverter" level="OFF" additivity="false">
+        <appender-ref ref="FILE-APPENDER"/>
+    </logger>
+</included>

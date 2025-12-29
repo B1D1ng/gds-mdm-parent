@@ -1,0 +1,506 @@
+[
+  {
+    "attributeName": "orderId",
+    "fieldName": "orderId",
+    "description": "Transaction order identifier",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.orderId",
+    "mandatory": true,
+    "avroSchema": "\"string\""
+  },
+  {
+    "attributeName": "transactionId",
+    "fieldName": "transactionId",
+    "description": "Transaction identifier",
+    "javaType": "LONG",
+    "schemaPath": "event.transactionContext.transactionId",
+    "mandatory": true,
+    "avroSchema": "\"long\""
+  },
+  {
+    "attributeName": "itemId",
+    "fieldName": "itemId",
+    "description": "Item identifier",
+    "javaType": "LONG",
+    "schemaPath": "event.transactionContext.itemId",
+    "mandatory": true,
+    "avroSchema": "\"long\""
+  },
+  {
+    "attributeName": "buyerUserId",
+    "fieldName": "buyerUserId",
+    "description": "Buyer user identifier",
+    "javaType": "LONG",
+    "schemaPath": "event.transactionContext.buyer.userId",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"long\"]"
+  },
+  {
+    "attributeName": "buyerUserName",
+    "fieldName": "buyerUserName",
+    "description": "Buyer user name",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.buyer.userName",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "buyerFirstName",
+    "fieldName": "buyerFirstName",
+    "description": "Buyer first name",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.buyer.firstName",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "buyerLastName",
+    "fieldName": "buyerLastName",
+    "description": "Buyer last name",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.buyer.lastName",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "buyerUserAttributes",
+    "fieldName": "buyerUserAttributes",
+    "description": "Buyer user attributes map",
+    "javaType": "MAP",
+    "schemaPath": "event.transactionContext.buyer.userAttributes",
+    "mandatory": false,
+    "avroSchema": "{\"type\": \"map\", \"values\": \"string\"}"
+  },
+  {
+    "attributeName": "sellerUserId",
+    "fieldName": "sellerUserId",
+    "description": "Seller user identifier",
+    "javaType": "LONG",
+    "schemaPath": "event.transactionContext.seller.userId",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"long\"]"
+  },
+  {
+    "attributeName": "sellerUserName",
+    "fieldName": "sellerUserName",
+    "description": "Seller user name",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.seller.userName",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "sellerFirstName",
+    "fieldName": "sellerFirstName",
+    "description": "Seller first name",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.seller.firstName",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "sellerLastName",
+    "fieldName": "sellerLastName",
+    "description": "Seller last name",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.seller.lastName",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "sellerUserAttributes",
+    "fieldName": "sellerUserAttributes",
+    "description": "Seller user attributes map",
+    "javaType": "MAP",
+    "schemaPath": "event.transactionContext.seller.userAttributes",
+    "mandatory": false,
+    "avroSchema": "{\"type\": \"map\", \"values\": \"string\"}"
+  },
+  {
+    "attributeName": "orderCreatedDate",
+    "fieldName": "orderCreatedDate",
+    "description": "Order created date",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.orderCreatedDate",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "orderPurchasedDate",
+    "fieldName": "orderPurchasedDate",
+    "description": "Order purchased date",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.orderPurchasedDate",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "orderModifiedDate",
+    "fieldName": "orderModifiedDate",
+    "description": "Order modified date",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.orderModifiedDate",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "orderCreatedDateEpoch",
+    "fieldName": "orderCreatedDateEpoch",
+    "description": "Order created date epoch",
+    "javaType": "LONG",
+    "schemaPath": "event.transactionContext.orderCreatedDateEpoch",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"long\"]"
+  },
+  {
+    "attributeName": "orderPurchasedDateEpoch",
+    "fieldName": "orderPurchasedDateEpoch",
+    "description": "Order purchased date epoch",
+    "javaType": "LONG",
+    "schemaPath": "event.transactionContext.orderPurchasedDateEpoch",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"long\"]"
+  },
+  {
+    "attributeName": "orderModifiedDateEpoch",
+    "fieldName": "orderModifiedDateEpoch",
+    "description": "Order modified date epoch",
+    "javaType": "LONG",
+    "schemaPath": "event.transactionContext.orderModifiedDateEpoch",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"long\"]"
+  },
+  {
+    "attributeName": "orderState",
+    "fieldName": "orderState",
+    "description": "Order state",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.orderState",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "lineItemId",
+    "fieldName": "lineItemId",
+    "description": "Line item identifier",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.lineItemId",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "itemTitle",
+    "fieldName": "itemTitle",
+    "description": "Item title",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.itemTitle",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "listingSiteId",
+    "fieldName": "listingSiteId",
+    "description": "Listing site identifier",
+    "javaType": "INTEGER",
+    "schemaPath": "event.transactionContext.listingSiteId",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"int\"]"
+  },
+  {
+    "attributeName": "purchasedSiteId",
+    "fieldName": "purchasedSiteId",
+    "description": "Purchased site identifier",
+    "javaType": "INTEGER",
+    "schemaPath": "event.transactionContext.purchasedSiteId",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"int\"]"
+  },
+  {
+    "attributeName": "fulfillmentStatus",
+    "fieldName": "fulfillmentStatus",
+    "description": "Fulfillment status",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.fulfillmentStatus",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "createdDate",
+    "fieldName": "createdDate",
+    "description": "Transaction created date",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.createdDate",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "purchasedDate",
+    "fieldName": "purchasedDate",
+    "description": "Transaction purchased date",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.purchasedDate",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "lastModifiedDate",
+    "fieldName": "lastModifiedDate",
+    "description": "Transaction last modified date",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.lastModifiedDate",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "createdDateEpoch",
+    "fieldName": "createdDateEpoch",
+    "description": "Transaction created date epoch",
+    "javaType": "LONG",
+    "schemaPath": "event.transactionContext.createdDateEpoch",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"long\"]"
+  },
+  {
+    "attributeName": "purchasedDateEpoch",
+    "fieldName": "purchasedDateEpoch",
+    "description": "Transaction purchased date epoch",
+    "javaType": "LONG",
+    "schemaPath": "event.transactionContext.purchasedDateEpoch",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"long\"]"
+  },
+  {
+    "attributeName": "lastModifiedDateEpoch",
+    "fieldName": "lastModifiedDateEpoch",
+    "description": "Transaction last modified date epoch",
+    "javaType": "LONG",
+    "schemaPath": "event.transactionContext.lastModifiedDateEpoch",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"long\"]"
+  },
+  {
+    "attributeName": "quantityPurchased",
+    "fieldName": "quantityPurchased",
+    "description": "Quantity purchased",
+    "javaType": "INTEGER",
+    "schemaPath": "event.transactionContext.quantityPurchased",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"int\"]"
+  },
+  {
+    "attributeName": "itemVariationId",
+    "fieldName": "itemVariationId",
+    "description": "Item variation identifier",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.itemVariationId",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "externalRefDomain",
+    "fieldName": "externalRefDomain",
+    "description": "External reference domain",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.externalReferenceId.domain",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "externalRefBaseIdentifier",
+    "fieldName": "externalRefBaseIdentifier",
+    "description": "External reference base identifier",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.externalReferenceId.baseIdentifier",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "externalRefExtendedIdentifier1",
+    "fieldName": "externalRefExtendedIdentifier1",
+    "description": "External reference extended identifier 1",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.externalReferenceId.extendedIdentifier1",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "externalRefIdentifier",
+    "fieldName": "externalRefIdentifier",
+    "description": "External reference identifier",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.externalReferenceId.identifier",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "primaryCategoryDetails",
+    "fieldName": "primaryCategoryDetails",
+    "description": "Primary category details",
+    "javaType": "LIST",
+    "schemaPath": "event.transactionContext.primaryCategoryDetails.![{'name': name, 'value': value}]",
+    "mandatory": false,
+    "avroSchema": "{\"type\": \"array\", \"items\": \"string\"}"
+  },
+  {
+    "attributeName": "secondaryCategoryDetails",
+    "fieldName": "secondaryCategoryDetails",
+    "description": "Secondary category details",
+    "javaType": "LIST",
+    "schemaPath": "event.transactionContext.secondaryCategoryDetails.![{'name': name, 'value': value}]",
+    "mandatory": false,
+    "avroSchema": "{\"type\": \"array\", \"items\": \"string\"}"
+  },
+  {
+    "attributeName": "itemTotalAmount",
+    "fieldName": "itemTotalAmount",
+    "description": "Item total amount",
+    "javaType": "DOUBLE",
+    "schemaPath": "event.transactionContext.itemTotal.amount",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"double\"]"
+  },
+  {
+    "attributeName": "itemTotalCurrency",
+    "fieldName": "itemTotalCurrency",
+    "description": "Item total currency code",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.itemTotal.currencyCode",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "itemCostAmount",
+    "fieldName": "itemCostAmount",
+    "description": "Item cost amount",
+    "javaType": "DOUBLE",
+    "schemaPath": "event.transactionContext.itemCost.amount",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"double\"]"
+  },
+  {
+    "attributeName": "itemCostCurrency",
+    "fieldName": "itemCostCurrency",
+    "description": "Item cost currency code",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.itemCost.currencyCode",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "itemTaxAmount",
+    "fieldName": "itemTaxAmount",
+    "description": "Item tax amount",
+    "javaType": "DOUBLE",
+    "schemaPath": "event.transactionContext.itemTax.amount",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"double\"]"
+  },
+  {
+    "attributeName": "itemTaxCurrency",
+    "fieldName": "itemTaxCurrency",
+    "description": "Item tax currency code",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.itemTax.currencyCode",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "shippingAmount",
+    "fieldName": "shippingAmount",
+    "description": "Shipping amount",
+    "javaType": "DOUBLE",
+    "schemaPath": "event.transactionContext.shipping.amount",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"double\"]"
+  },
+  {
+    "attributeName": "shippingCurrency",
+    "fieldName": "shippingCurrency",
+    "description": "Shipping currency code",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.shipping.currencyCode",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "shippingTaxAmount",
+    "fieldName": "shippingTaxAmount",
+    "description": "Shipping tax amount",
+    "javaType": "DOUBLE",
+    "schemaPath": "event.transactionContext.shippingTax.amount",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"double\"]"
+  },
+  {
+    "attributeName": "shippingTaxCurrency",
+    "fieldName": "shippingTaxCurrency",
+    "description": "Shipping tax currency code",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.shippingTax.currencyCode",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "insightsAttributes",
+    "fieldName": "insightsAttributes",
+    "description": "Insights attributes map",
+    "javaType": "MAP",
+    "schemaPath": "event.transactionContext.insights.attributes",
+    "mandatory": false,
+    "avroSchema": "{\"type\": \"map\", \"values\": \"string\"}"
+  },
+  {
+    "attributeName": "insightsName",
+    "fieldName": "insightsName",
+    "description": "Insights name",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.insights.name",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "insightsExternalIdDomain",
+    "fieldName": "insightsExternalIdDomain",
+    "description": "Insights external ID domain",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.insights.externalId.domain",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "insightsExternalIdBaseIdentifier",
+    "fieldName": "insightsExternalIdBaseIdentifier",
+    "description": "Insights external ID base identifier",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.insights.externalId.baseIdentifier",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "insightsExternalIdExtendedIdentifier1",
+    "fieldName": "insightsExternalIdExtendedIdentifier1",
+    "description": "Insights external ID extended identifier 1",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.insights.externalId.extendedIdentifier1",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "insightsExternalIdIdentifier",
+    "fieldName": "insightsExternalIdIdentifier",
+    "description": "Insights external ID identifier",
+    "javaType": "STRING",
+    "schemaPath": "event.transactionContext.insights.externalId.identifier",
+    "mandatory": false,
+    "avroSchema": "[\"null\", \"string\"]"
+  },
+  {
+    "attributeName": "lineItemProperties",
+    "fieldName": "lineItemProperties",
+    "description": "Line item properties map",
+    "javaType": "MAP",
+    "schemaPath": "event.transactionContext.lineItemProperties",
+    "mandatory": false,
+    "avroSchema": "{\"type\": \"map\", \"values\": \"string\"}"
+  }
+]

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+    <type>Service</type>
+    <public>false</public>
+    <!-- Mandatory field -->
+    <description>Required for service registration and deploy to QA/ Prod</description>
+    <name>cjsmdm</name>
+    <lifecycleState>Deployed</lifecycleState>
+    <page-Map>
+        <page>
+            <name>DefaultPage</name>
+            <description>This default page that will be inserted for every application. The page id of the default page will be used for every page that is not registered with AR during development</description>
+            <!-- Mandatory field -->
+	    <lifecycleState>Deployed</lifecycleState>
+	    <isAjax>false</isAjax>
+	    <isDefault>true</isDefault>
+        </page>
+    </page-Map>
+    <!-- Optional field: true if your application invokes services that require an IAFToken -->
+    <!--<secureService>true</secureService>-->
+
+    <parameters-Map>
+        <parameters key="COS">true</parameters>
+        <parameters key="rio.profile">ETS-Service</parameters>
+    </parameters-Map>
+</application>

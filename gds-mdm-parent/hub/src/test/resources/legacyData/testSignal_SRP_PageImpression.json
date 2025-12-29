@@ -1,0 +1,366 @@
+[
+  {
+    "id": "044a23cadb563653ab51d4eb40acaa88",
+    "version": 9,
+    "domain": "Search",
+    "name": "Impression_SRP_Page_Impression",
+    "description": "Impression_SRP_Page_Impression",
+    "type": "PAGE_IMPRESSION",
+    "status": 0,
+    "logicalDefinition": [
+      {
+        "eventClassifiers": [
+          {
+            "type": "PAGE_SERVE",
+            "name": "Search page experience event",
+            "fsmOrder": null,
+            "source": "SOJ",
+            "filter": "!empty(event?.eventPayload?.eventProperties?.srpGist) and ![4465146, 3830594, 4535131].contains(event.context.pageInteractionContext.pageId)"
+          },
+          {
+            "type": "PAGE_VIEW_ENTRY",
+            "name": "ST Search page view entry event",
+            "fsmOrder": null,
+            "source": "ST",
+            "filter": "[\"VIEW.PAGE_LOAD\", \"VIEW.PAGE_RELOAD\", \"VIEW.TAB_VIEW\", \"VIEW.TAB_SWITCH\", \"VIEW.BACK_FORWARD\"].contains(event.eventPayload.activityType) and [2351460,2381081,2380866,3658866,3844695,4380942,4549347].contains(event.context.pageInteractionContext.pageId) and (empty(event?.eventPayload?.eventProperties?.eventType) or event.eventPayload.eventProperties.eventType != 'PAGEPING')"
+          },
+          {
+            "type": "PAGE_VIEW_EXIT",
+            "name": "ST Search page view exit event",
+            "fsmOrder": null,
+            "source": "ST",
+            "filter": "[\"EXIT.PAGE_UNLOAD\", \"EXIT.TAB_HIDE\"].contains(event.eventPayload.activityType) and [2351460,2381081,2380866,3658866,3844695,4380942,4549347].contains(event.context.pageInteractionContext.pageId) and (empty(event?.eventPayload?.eventProperties?.eventType) or event.eventPayload.eventProperties.eventType != 'PAGEPING')"
+          }
+        ],
+        "fields": [
+          {
+            "readyStates": [
+              "PAGE_SERVE"
+            ],
+            "clz": "jexl",
+            "type": "String",
+            "name": "itemId",
+            "formula": "event.eventPayload.itemId",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "PAGE_VIEW_EXIT"
+            ],
+            "clz": "jexl",
+            "type": "Long",
+            "name": "dwell",
+            "formula": "event.eventPayload.timestamp - viewedTs",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "PAGE_SERVE"
+            ],
+            "clz": "jexl",
+            "type": "String",
+            "name": "srpGist",
+            "formula": "event.eventPayload.eventProperties.srpGist",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "PAGE_VIEW_EXIT"
+            ],
+            "clz": "jexl",
+            "type": "Long",
+            "name": "exitedTs",
+            "formula": "event.eventPayload.timestamp",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "CLIENT_PAGE_VIEW",
+              "PAGE_VIEW_ENTRY"
+            ],
+            "clz": "jexl",
+            "type": "Long",
+            "name": "viewedTs",
+            "formula": "event.eventPayload.timestamp",
+            "cached": true
+          },
+          {
+            "readyStates": [
+              "PAGE_SERVE"
+            ],
+            "clz": "lit",
+            "type": "Boolean",
+            "name": "isServed",
+            "formula": "true",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "CLIENT_PAGE_VIEW",
+              "PAGE_VIEW_ENTRY"
+            ],
+            "clz": "lit",
+            "type": "Boolean",
+            "name": "isViewed",
+            "formula": "true",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "PAGE_SERVE"
+            ],
+            "clz": "jexl",
+            "type": "Long",
+            "name": "servedTs",
+            "formula": "event.eventPayload.timestamp",
+            "cached": false
+          }
+        ],
+        "uuidGenerator": null,
+        "platform": "CJS",
+        "retentionPeriod": null,
+        "correlationIdFormulas": null,
+        "needAccumulation": null
+      }
+    ],
+    "refVersion": 8,
+    "createdUser": "feshao",
+    "createdTime": "2024-09-03 21:19:22",
+    "updatedUser": "feshao",
+    "updatedTime": "2024-09-03 21:19:22",
+    "env": "STAG"
+  },
+  {
+    "id": "044a23cadb563653ab51d4eb40acaa88",
+    "version": 7,
+    "domain": "",
+    "name": "Impression_SRP_Page_Impression",
+    "description": "Impression_SRP_Page_Impression",
+    "type": "PAGE_IMPRESSION",
+    "status": 0,
+    "logicalDefinition": [
+      {
+        "eventClassifiers": [
+          {
+            "type": "PAGE_VIEW_EXIT",
+            "name": "ST Search page view exit event",
+            "fsmOrder": null,
+            "source": "ST",
+            "filter": "[\"EXIT.PAGE_UNLOAD\", \"EXIT.TAB_HIDE\"].contains(event.eventPayload.activityType) and [2351460].contains(event.context.pageInteractionContext.pageId)"
+          },
+          {
+            "type": "PAGE_SERVE",
+            "name": "Search page experience event",
+            "fsmOrder": null,
+            "source": "SOJ",
+            "filter": "[\"EXPC\"].contains(event.eventPayload.eventType) and [2351460].contains(event.context.pageInteractionContext.pageId)"
+          },
+          {
+            "type": "PAGE_VIEW_ENTRY",
+            "name": "ST Search page view entry event",
+            "fsmOrder": null,
+            "source": "ST",
+            "filter": "[\"VIEW.PAGE_LOAD\", \"VIEW.PAGE_RELOAD\", \"VIEW.TAB_VIEW\", \"VIEW.TAB_SWITCH\", \"VIEW.BACK_FORWARD\"].contains(event.eventPayload.activityType) and [2351460].contains(event.context.pageInteractionContext.pageId)"
+          }
+        ],
+        "fields": [
+          {
+            "readyStates": [
+              "PAGE_VIEW_EXIT"
+            ],
+            "clz": "jexl",
+            "type": "Long",
+            "name": "dwell",
+            "formula": "event.eventPayload.timestamp - viewedTs",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "PAGE_VIEW_EXIT"
+            ],
+            "clz": "jexl",
+            "type": "Long",
+            "name": "exitedTs",
+            "formula": "event.eventPayload.timestamp",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "CLIENT_PAGE_VIEW",
+              "PAGE_VIEW_ENTRY"
+            ],
+            "clz": "jexl",
+            "type": "Long",
+            "name": "viewedTs",
+            "formula": "event.eventPayload.timestamp",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "PAGE_SERVE"
+            ],
+            "clz": "lit",
+            "type": "Boolean",
+            "name": "isServed",
+            "formula": "true",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "CLIENT_PAGE_VIEW",
+              "PAGE_VIEW_ENTRY"
+            ],
+            "clz": "lit",
+            "type": "Boolean",
+            "name": "isViewed",
+            "formula": "true",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "PAGE_SERVE"
+            ],
+            "clz": "jexl",
+            "type": "Long",
+            "name": "servedTs",
+            "formula": "event.eventPayload.timestamp",
+            "cached": false
+          }
+        ],
+        "uuidGenerator": null,
+        "platform": "CJS",
+        "retentionPeriod": null,
+        "correlationIdFormulas": null,
+        "needAccumulation": null
+      }
+    ],
+    "refVersion": 1,
+    "createdUser": "feshao",
+    "createdTime": "2024-07-16 22:53:16",
+    "updatedUser": "feshao",
+    "updatedTime": "2024-07-16 22:53:16",
+    "env": "STAG"
+  },
+  {
+    "id": "044a23cadb563653ab51d4eb40acaa88",
+    "version": 8,
+    "domain": "",
+    "name": "Impression_SRP_Page_Impression",
+    "description": "Impression_SRP_Page_Impression",
+    "type": "PAGE_IMPRESSION",
+    "status": 0,
+    "logicalDefinition": [
+      {
+        "eventClassifiers": [
+          {
+            "type": "PAGE_VIEW_EXIT",
+            "name": "ST Search page view exit event",
+            "fsmOrder": null,
+            "source": "ST",
+            "filter": "[\"EXIT.PAGE_UNLOAD\", \"EXIT.TAB_HIDE\"].contains(event.eventPayload.activityType) and [2351460].contains(event.context.pageInteractionContext.pageId)"
+          },
+          {
+            "type": "PAGE_SERVE",
+            "name": "Search page experience event",
+            "fsmOrder": null,
+            "source": "SOJ",
+            "filter": "[\"EXPC\"].contains(event.eventPayload.eventType) and [2351460].contains(event.context.pageInteractionContext.pageId)"
+          },
+          {
+            "type": "PAGE_VIEW_ENTRY",
+            "name": "ST Search page view entry event",
+            "fsmOrder": null,
+            "source": "ST",
+            "filter": "[\"VIEW.PAGE_LOAD\", \"VIEW.PAGE_RELOAD\", \"VIEW.TAB_VIEW\", \"VIEW.TAB_SWITCH\", \"VIEW.BACK_FORWARD\"].contains(event.eventPayload.activityType) and [2351460].contains(event.context.pageInteractionContext.pageId)"
+          }
+        ],
+        "fields": [
+          {
+            "readyStates": [
+              "PAGE_VIEW_EXIT"
+            ],
+            "clz": "jexl",
+            "type": "Long",
+            "name": "dwell",
+            "formula": "event.eventPayload.timestamp - viewedTs",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "PAGE_VIEW_EXIT"
+            ],
+            "clz": "jexl",
+            "type": "Long",
+            "name": "exitedTs",
+            "formula": "event.eventPayload.timestamp",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "CLIENT_PAGE_VIEW",
+              "PAGE_VIEW_ENTRY"
+            ],
+            "clz": "jexl",
+            "type": "Long",
+            "name": "viewedTs",
+            "formula": "event.eventPayload.timestamp",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "PAGE_SERVE"
+            ],
+            "clz": "lit",
+            "type": "Boolean",
+            "name": "isServed",
+            "formula": "true",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "CLIENT_PAGE_VIEW",
+              "PAGE_VIEW_ENTRY"
+            ],
+            "clz": "lit",
+            "type": "Boolean",
+            "name": "isViewed",
+            "formula": "true",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "PAGE_SERVE"
+            ],
+            "clz": "jexl",
+            "type": "Long",
+            "name": "servedTs",
+            "formula": "event.eventPayload.timestamp",
+            "cached": false
+          },
+          {
+            "readyStates": [
+              "CLIENT_PAGE_VIEW",
+              "PAGE_SERVE"
+            ],
+            "clz": "alias",
+            "type": "Long",
+            "name": "pageIdUnified",
+            "formula": "p,cp",
+            "cached": false
+          }
+        ],
+        "uuidGenerator": null,
+        "platform": "CJS",
+        "retentionPeriod": null,
+        "correlationIdFormulas": null,
+        "needAccumulation": null
+      }
+    ],
+    "refVersion": 1,
+    "createdUser": "feshao",
+    "createdTime": "2024-07-17 04:51:54",
+    "updatedUser": "feshao",
+    "updatedTime": "2024-07-17 04:51:54",
+    "env": "STAG"
+  }
+]

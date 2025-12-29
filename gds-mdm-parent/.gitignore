@@ -1,0 +1,32 @@
+**/target/
+!.mvn/wrapper/maven-wrapper.jar
+raptor.xml
+**/log
+
+# Raptor junk
+**/OpenTelemetryEventConfigBean
+**/OpenTelemetryLogConfigBean
+**/XslTransformObjectCacheConfig64.xml
+**/temp_persist_config*
+**/tmp_jmx_persist_**
+**/TomcatThreadPoolSizeBean
+**/ThreadLocalFlushBean.xml
+**/TrustFabricHandlerConfigBean
+**/TrustFabricInjectionHandlerConfigBean
+**/enevelopeapi
+**/esamscache
+**/nameservice
+**/clientconfig
+**/OpenTelemetryConfigBean
+**/SensitiveParameters.xml
+**/ConfigRoot/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+**/persist_mark*
+**/PiiInstrumentationOverrideConfigBean
+
+.claude

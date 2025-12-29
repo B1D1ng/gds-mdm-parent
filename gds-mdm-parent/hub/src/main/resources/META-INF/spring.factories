@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.ebay.behavior.gds.mdm.signal.config.CacheInitializer

@@ -1,0 +1,41 @@
+{
+  "name":"{cjsmdm}",
+  "perms":[
+    {
+      "scope":"{scope*}",
+      "description":"{Allow users to approve or reject a Tracking Plan. Represents a Tracking Plan approver during the Governance process.}",
+      "permid":"{governance-approver}",
+      "environment":[
+        "production",
+        "non-production"
+      ],
+      "Type of data allowed to access":[
+        "Business"
+      ]
+    },
+    {
+      "scope":"{scope*}",
+      "description":"{Allow users to access to some write endpoints. Represents a Tracking specialist, who guides the user through the Governance.}",
+      "permid":"{tracking-moderator}",
+      "environment":[
+        "production",
+        "non-production"
+      ],
+      "Type of data allowed to access":[
+        "Business"
+      ]
+    },
+    {
+      "scope":"{scope*}",
+      "description":"{Allow users to access to some write endpoints. Represents the gds-mdm system administrator.}",
+      "permid":"{cjs-admin}",
+      "environment":[
+        "production",
+        "non-production"
+      ],
+      "Type of data allowed to access":[
+        "Business"
+      ]
+    }
+  ]
+}

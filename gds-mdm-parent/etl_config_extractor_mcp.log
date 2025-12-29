@@ -1,0 +1,4 @@
+2025-11-17 11:16:02,313 - etl-config-extractor-mcp - INFO - Starting ETL Config Extractor MCP Server (StdioMCP)...
+2025-11-17 11:16:02,320 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-11-17 11:16:02,322 - mcp.server.lowlevel.server - INFO - Processing request of type ListResourcesRequest
+2025-11-17 11:16:02,322 - mcp.server.lowlevel.server - INFO - Processing request of type ListResourceTemplatesRequest

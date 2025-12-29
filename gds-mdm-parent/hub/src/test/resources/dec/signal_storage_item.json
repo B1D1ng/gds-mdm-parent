@@ -1,0 +1,12 @@
+[
+    {
+        "storageType": "STREAM",
+        "assetName": "gds.esp.signal.item"
+    },
+    {
+        "storageType": "TABLE",
+        "assetName": "gds_t.esp_item_signal_hourly",
+        "doneFile": "APOLLO_RNO.GDS_T.ESP_ITEM_SIGNAL_HOURLY.done",
+        "frequency": "HOURLY"
+    }
+]

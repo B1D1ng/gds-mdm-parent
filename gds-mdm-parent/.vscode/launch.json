@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "type": "java",
+        "name": "HubMdmApplication",
+        "request": "launch",
+        "mainClass": "com.ebay.behavior.gds.mdm.HubMdmApplication",
+        "projectName": "gds-mdm-hub",
+        "vmArgs": "--add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/jdk.internal.misc=ALL-UNNAMED --add-opens java.base/sun.net.dns=ALL-UNNAMED --add-opens java.base/sun.net.util=ALL-UNNAMED --add-opens java.base/sun.net=ALL-UNNAMED --add-opens java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens java.base/sun.security.util=ALL-UNNAMED --add-opens java.compiler/javax.annotation.processing=ALL-UNNAMED --add-opens java.management/javax.management=ALL-UNNAMED --add-opens java.xml/com.sun.org.apache.xalan.internal.xsltc.trax=ALL-UNNAMED --add-opens java.xml/com.sun.org.apache.xerces.internal.dom=ALL-UNNAMED --add-opens java.xml/com.sun.org.apache.xerces.internal.jaxp=ALL-UNNAMED --add-opens java.xml/com.sun.xml.internal.stream=ALL-UNNAMED -XX:+UnlockExperimentalVMOptions -XX:+UseZGC"
+    },
+    {
+        "type": "java",
+        "name": "HubMdmApplication",
+        "request": "launch",
+        "mainClass": "com.ebay.behavior.gds.mdm.HubMdmApplication",
+        "projectName": "gds-mdm-touchpoint",
+        "vmArgs": "--add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/jdk.internal.misc=ALL-UNNAMED --add-opens java.base/sun.net.dns=ALL-UNNAMED --add-opens java.base/sun.net.util=ALL-UNNAMED --add-opens java.base/sun.net=ALL-UNNAMED --add-opens java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens java.base/sun.security.util=ALL-UNNAMED --add-opens java.compiler/javax.annotation.processing=ALL-UNNAMED --add-opens java.management/javax.management=ALL-UNNAMED --add-opens java.xml/com.sun.org.apache.xalan.internal.xsltc.trax=ALL-UNNAMED --add-opens java.xml/com.sun.org.apache.xerces.internal.dom=ALL-UNNAMED --add-opens java.xml/com.sun.org.apache.xerces.internal.jaxp=ALL-UNNAMED --add-opens java.xml/com.sun.xml.internal.stream=ALL-UNNAMED -XX:+UnlockExperimentalVMOptions -XX:+UseZGC"
+    },
+    {
+        "type": "java",
+        "name": "DecMdmApplication",
+        "request": "launch",
+        "mainClass": "com.ebay.behavior.gds.mdm.dec.DecMdmApplication",
+        "projectName": "gds-mdm-dec",
+        "vmArgs": "--add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/jdk.internal.misc=ALL-UNNAMED --add-opens java.base/sun.net.dns=ALL-UNNAMED --add-opens java.base/sun.net.util=ALL-UNNAMED --add-opens java.base/sun.net=ALL-UNNAMED --add-opens java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens java.base/sun.security.util=ALL-UNNAMED --add-opens java.compiler/javax.annotation.processing=ALL-UNNAMED --add-opens java.management/javax.management=ALL-UNNAMED --add-opens java.xml/com.sun.org.apache.xalan.internal.xsltc.trax=ALL-UNNAMED --add-opens java.xml/com.sun.org.apache.xerces.internal.dom=ALL-UNNAMED --add-opens java.xml/com.sun.org.apache.xerces.internal.jaxp=ALL-UNNAMED --add-opens java.xml/com.sun.xml.internal.stream=ALL-UNNAMED -XX:+UnlockExperimentalVMOptions -XX:+UseZGC"
+    }
+]
+}

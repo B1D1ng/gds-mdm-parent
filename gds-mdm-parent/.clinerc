@@ -1,0 +1,8 @@
+{
+  "contextFolders": ["docs/ai"],
+  "priority": {
+    "high": ["docs/ai/project-overview.md", "docs/ai/architecture.md", "docs/ai/tech-stack.md"],
+    "medium": ["docs/ai/key-files.md", "docs/ai/glossary.md", "docs/ai/development-workflow.md"],
+    "low": []
+  }
+}

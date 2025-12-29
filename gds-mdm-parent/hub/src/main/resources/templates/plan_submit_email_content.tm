@@ -1,0 +1,1 @@
+Plan (assetId: %d, name: %s), going to change a status from %s to SUBMITTED_FOR_REVIEW.

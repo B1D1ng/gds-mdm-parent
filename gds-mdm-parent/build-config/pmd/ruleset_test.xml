@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="jest"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
+	http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+    <description>PMD test rule set</description>
+
+    <exclude-pattern>.*/com/ebay/behavior/gds/schema/.*</exclude-pattern>
+
+    <!-- bestpractices -->
+    <rule ref="category/java/bestpractices.xml">
+        <exclude name="JUnitTestsShouldIncludeAssert"/>
+        <exclude name="JUnitTestContainsTooManyAsserts"/>
+        <exclude name="JUnitAssertionsShouldIncludeMessage"/>
+        <exclude name="AbstractClassWithoutAbstractMethod"/>
+        <exclude name="UnusedImports"/>
+        <exclude name="DoubleBraceInitialization"/>
+        <exclude name="UnusedPrivateField"/>
+        <exclude name="SystemPrintln"/>
+        <exclude name="AvoidPrintStackTrace"/>
+        <exclude name="AvoidUsingHardCodedIP"/>
+        <exclude name="GuardLogStatement"/>
+        <exclude name="UnusedPrivateMethod"/>
+        <exclude name="SwitchStmtsShouldHaveDefault"/>
+    </rule>
+
+    <!-- codestyle -->
+    <rule ref="category/java/codestyle.xml">
+        <exclude name="MethodArgumentCouldBeFinal"/>
+        <exclude name="LocalVariableCouldBeFinal"/>
+        <exclude name="AtLeastOneConstructor"/>
+        <exclude name="OnlyOneReturn"/>
+        <exclude name="CommentDefaultAccessModifier"/>
+        <exclude name="CallSuperInConstructor"/>
+        <exclude name="PackageCase"/>
+        <exclude name="LinguisticNaming"/>
+        <exclude name="TooManyStaticImports"/>
+        <exclude name="FieldNamingConventions"/>
+        <exclude name="UseUnderscoresInNumericLiterals"/>
+        <exclude name="UseDiamondOperator"/>
+        <exclude name="ConfusingTernary"/>
+        <exclude name="GenericsNaming"/>
+        <exclude name="UnnecessaryImport"/>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/ShortClassName">
+        <properties>
+            <property name="minimum" value="3"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/ShortMethodName">
+        <properties>
+            <property name="minimum" value="2" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/ClassNamingConventions">
+        <properties>
+            <property name="classPattern" value="[A-Z][a-zA-Z0-9]*"/>
+            <property name="abstractClassPattern" value="[A-Z][a-zA-Z0-9]*"/>
+            <property name="interfacePattern" value="[A-Z][a-zA-Z0-9]*"/>
+            <property name="enumPattern" value="[A-Z][a-zA-Z0-9]*"/>
+            <property name="annotationPattern" value="[A-Z][a-zA-Z0-9]*"/>
+            <property name="utilityClassPattern" value="[A-Z][a-zA-Z0-9]*"/>
+            <property name="testClassPattern" value="^Test.*$|^[A-Z][a-zA-Z0-9]*(Test|IT)?$"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/MethodNamingConventions">
+        <properties>
+            <property name="methodPattern" value="[_a-z][a-zA-Z0-9]*"/>
+            <property name="staticPattern" value="[a-z][a-zA-Z0-9]*"/>
+            <property name="nativePattern" value="[a-z][a-zA-Z0-9]*"/>
+            <property name="junit4TestPattern" value="[_a-z][a-zA-Z0-9_]*"/>
+            <property name="junit5TestPattern" value="[_a-z][a-zA-Z0-9_]*"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/ShortVariable">
+        <properties>
+            <property name="minimum" value="2"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/LongVariable">
+        <properties>
+            <property name="minimum" value="35"/>
+        </properties>
+    </rule>
+
+    <!-- design -->
+    <rule ref="category/java/design.xml">
+        <exclude name="LawOfDemeter"/>
+        <exclude name="TooManyMethods"/>
+        <exclude name="ImmutableField"/>
+        <exclude name="ExcessiveImports"/>
+        <exclude name="NcssCount"/>
+        <exclude name="AvoidCatchingGenericException"/>
+        <exclude name="FinalFieldCouldBeStatic"/>
+        <exclude name="MutableStaticState"/>
+        <exclude name="SignatureDeclareThrowsException"/>
+        <exclude name="TooManyFields"/>
+        <exclude name="CyclomaticComplexity"/>
+        <exclude name="DataClass"/>
+        <exclude name="AvoidDeeplyNestedIfStmts"/>
+        <exclude name="AbstractClassWithoutAnyMethod"/>
+    </rule>
+
+    <rule ref="category/java/design.xml/CognitiveComplexity">
+        <properties>
+            <property name="reportLevel" value="17" />
+        </properties>
+    </rule>
+
+    <!-- errorprone -->
+    <rule ref="category/java/errorprone.xml">
+        <exclude name="MissingSerialVersionUID"/>
+        <exclude name="AvoidDuplicateLiterals"/>
+        <exclude name="CloseResource"/>
+        <exclude name="DataflowAnomalyAnalysis"/>
+        <exclude name="TestClassWithoutTestCases"/>
+        <exclude name="UseLocaleWithCaseConversions"/>
+        <exclude name="AvoidFieldNameMatchingMethodName"/>
+    </rule>
+
+    <rule ref="category/java/errorprone.xml/AvoidLiteralsInIfCondition">
+        <properties>
+            <property name="ignoreMagicNumbers" value="-1,0,1,2,100"/>
+        </properties>
+    </rule>
+
+</ruleset>

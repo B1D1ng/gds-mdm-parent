@@ -1,0 +1,18 @@
+resourcePackages:
+  - com.ebay.behavior.gds.mdm.contract.resource
+  - com.ebay.behavior.gds.mdm.signal.resource
+  - com.ebay.behavior.gds.mdm.contract.resource
+  - com.ebay.behavior.gds.mdm.udf.resource
+prettyPrint: true
+cacheTTL: 0
+openAPI:
+  info:
+    version: '1.0'
+    title: GDS-MDM Signal API
+    description: 'Signal metadata management APIs for GDS-MDM'
+    termsOfService: http://swagger.io/terms/
+    contact:
+      email: DL-eBay-CORE-CJS@ebay.com
+    license:
+      name: Apache 2.0
+      url: http://www.apache.org/licenses/LICENSE-2.0.html

@@ -1,0 +1,20 @@
+{
+    "emails": [ "vsergeev@ebay.com", "DL-eBay-CORE-CJS@ebay.com"],
+    "stack": "raptor",
+    "git": {
+        "org": "customer-journey-signal",
+        "repo": "cjs-mdm-parent",
+        "branch": "main"
+    },
+    "upgradeDay": "THURSDAY#1",
+    "timeZone": "UTC-08",
+    "enabled": true,
+    "props": {
+        "jiraPrCorrelationEnabled": "true",
+        "autoMerge": "false",
+        "collaborators": "vsergeev",
+        "allowAutoMergeOnWarning": "true",
+        "pom": "pom.xml",
+        "appName": "cjsmdm"
+    }
+}

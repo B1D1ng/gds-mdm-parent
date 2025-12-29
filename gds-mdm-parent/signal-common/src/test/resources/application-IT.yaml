@@ -1,0 +1,65 @@
+telemetry.sendTelemetryDataEnabled: false
+core-auth.uri-prefixes: /noAuth
+ginger-client.myService.myClient.endpointUri: "http://localhost:8080/"
+standardsMap.error.3: v1
+
+opentracing:
+  cal-sample-rate: 0
+  spring.web.enabled: false
+
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: "application/json,application/xml"
+    min-response-size: 1024
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+udc:
+  enable: true
+  env: STAGING
+  data-source: TEST
+
+sam:
+  fidelius:
+    - domain: esAuth
+      name: username
+      path: "/pmsvc/site/tracking/serviceaccount/username"
+
+    - domain: esAuth
+      name: password
+      path: "/pmsvc/site/tracking/serviceaccount/password"
+
+ginger-client:
+  museauth:
+    endpointUri: https://auth.muse.vip.ebay.com/api
+    connectTimeout: 10000
+    readTimeout: 10000
+    maxRetryCount: 3
+    properties: ebay.cos.enabled=false
+
+  pmsvc:
+    endpointUri: http://pmsvc.vip.qa.ebay.com/pmsvc/
+    connectTimeout: 20000
+    readTimeout: 50000
+    maxRetryCount: 3
+    properties: ebay.cos.enabled=false
+
+  udc.metadata:
+    endpointUri: https://datagov-stg1.qa.ebay.com/api/v1/metadata/
+    connectTimeout: 10000
+    readTimeout: 30000
+    maxRetryCount: 3
+    properties: ebay.cos.enabled=false
+
+cache:
+  reload-cron: "0 0 3 * * *" # at 3am - not in use for ITs
+
+  caches:
+    - name: authToken
+      expire-after-access-minutes: 10
+      initial-capacity: 10
+      max-size: 10

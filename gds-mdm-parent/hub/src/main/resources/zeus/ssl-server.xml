@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <property>
+        <name>ssl.server.keystore.keypassword</name>
+        <value>storepass</value>
+        <final>false</final>
+    </property>
+    <property>
+        <name>ssl.server.keystore.location</name>
+        <value>/etc/hadoop/keystore.jks</value>
+        <final>false</final>
+    </property>
+    <property>
+        <name>ssl.server.keystore.password</name>
+        <value>storepass</value>
+        <final>false</final>
+    </property>
+    <property>
+        <name>ssl.server.keystore.type</name>
+        <value>jks</value>
+        <final>false</final>
+    </property>
+    <property>
+        <name>ssl.server.truststore.location</name>
+        <value>/etc/hadoop/truststore.jks</value>
+        <final>false</final>
+    </property>
+    <property>
+        <name>ssl.server.truststore.password</name>
+        <value>changeit</value>
+        <final>false</final>
+    </property>
+    <property>
+        <name>ssl.server.truststore.reload.interval</name>
+        <value>100000</value>
+        <final>false</final>
+    </property>
+    <property>
+        <name>ssl.server.truststore.type</name>
+        <value>jks</value>
+        <final>false</final>
+    </property>
+</configuration>

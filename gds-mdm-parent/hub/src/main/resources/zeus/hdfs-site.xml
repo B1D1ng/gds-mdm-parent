@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+    <property>
+        <name>dfs.block.access.token.enable</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.block.local-path-access.user</name>
+        <value>hdfs hadoop</value>
+    </property>
+
+    <property>
+        <name>dfs.cluster.administrators</name>
+        <value>hdfs,hadoop hdmi-hadoopcore,hdmi-hadooptools</value>
+    </property>
+
+
+    <property>
+        <name>dfs.namenode.handler.count</name>
+        <value>128</value>
+    </property>
+
+    <property>
+        <name>dfs.ha.automatic-failover.enabled</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.encrypt.data.transfer.cipher.suites</name>
+        <value>AES/CTR/NoPadding</value>
+    </property>
+
+
+    <property>
+        <name>dfs.ha.fencing.methods</name>
+        <value>shell(/bin/true)</value>
+    </property>
+
+    <property>
+        <name>dfs.nameservices</name>
+        <value>zeus-slc,zeus</value>
+    </property>
+
+    <property>
+        <name>dfs.internal.nameservices</name>
+        <value>zeus</value>
+    </property>
+
+    <property>
+        <name>dfs.ha.namenodes.zeus</name>
+        <value>nn1,nn2,nn3</value>
+    </property>
+
+    <property>
+        <name>dfs.ha.namenodes.zeus-slc</name>
+        <value>nn1,nn2,nn3</value>
+        <final>false</final>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.zeus.nn1</name>
+        <value>zeus-slc-nn-1.vip.hadoop.ebay.com:8020</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.zeus.nn2</name>
+        <value>zeus-slc-nn-2.vip.hadoop.ebay.com:8020</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.https-address.zeus.nn1</name>
+        <value>zeus-slc-nn-1.vip.hadoop.ebay.com:50070</value>
+    </property>
+    <property>
+        <name>dfs.namenode.https-address.zeus.nn2</name>
+        <value>zeus-slc-nn-2.vip.hadoop.ebay.com:50070</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.https-address.zeus.nn3</name>
+        <value>zeus-slc-nn-3.vip.hadoop.ebay.com:50070</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.zeus.nn3</name>
+        <value>zeus-slc-nn-3.vip.hadoop.ebay.com:8020</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.zeus-slc.nn1</name>
+        <value>zeus-slc-nn-1.vip.hadoop.ebay.com:8020</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.zeus-slc.nn2</name>
+        <value>zeus-slc-nn-2.vip.hadoop.ebay.com:8020</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.https-address.zeus-slc.nn1</name>
+        <value>zeus-slc-nn-1.vip.hadoop.ebay.com:50070</value>
+    </property>
+    <property>
+        <name>dfs.namenode.https-address.zeus-slc.nn2</name>
+        <value>zeus-slc-nn-2.vip.hadoop.ebay.com:50070</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.https-address.zeus-slc.nn3</name>
+        <value>zeus-slc-nn-3.vip.hadoop.ebay.com:50070</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.zeus-slc.nn3</name>
+        <value>zeus-slc-nn-3.vip.hadoop.ebay.com:8020</value>
+    </property>
+
+    <property>
+        <name>dfs.client.failover.random.order</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.client.failover.proxy.provider.zeus</name>
+        <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+    </property>
+
+    <property>
+        <name>dfs.client.failover.proxy.provider.zeus-slc</name>
+        <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+        <final>false</final>
+    </property>
+
+    <property>
+        <name>dfs.namenode.shared.edits.dir</name>
+        <value>qjournal://zeus-slc-jn-1.vip.hadoop.ebay.com:8485;zeus-slc-jn-2.vip.hadoop.ebay.com:8485;zeus-slc-jn-3.vip.hadoop.ebay.com:8485;zeus-slc-jn-4.vip.hadoop.ebay.com:8485;zeus-slc-jn-5.vip.hadoop.ebay.com:8485/zeus</value>
+    </property>
+
+
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///hadoop/1/hdfs/namenode</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.name.dir.restore</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.checkpoint.period</name>
+        <value>21600</value>
+        <description>The number of seconds between two periodic checkpoints.
+        </description>
+    </property>
+
+    <property>
+        <name>dfs.namenode.checkpoint.txns</name>
+        <value>15000000</value>
+        <description>The Secondary NameNode or CheckpointNode will create a checkpoint
+            of the namespace every 'dfs.namenode.checkpoint.txns' transactions, regardless
+            of whether 'dfs.namenode.checkpoint.period' has expired.
+        </description>
+    </property>
+
+    <property>
+        <name>dfs.namenode.decommission.interval</name>
+        <value>150</value>
+        <description>Namenode periodicity in seconds to check if decommission is
+            complete.</description>
+    </property>
+
+    <property>
+        <name>dfs.namenode.avoid.read.stale.datanode</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.avoid.write.stale.datanode</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.image.transfer.bandwidthPerSec</name>
+        <value>15728640</value>
+        <description>
+            Maximum bandwidth used for image transfer in bytes per second.
+            This can help keep normal namenode operations responsive during
+            checkpointing. The maximum bandwidth and timeout in
+            dfs.image.transfer.timeout should be set such that normal image
+            transfers can complete successfully.
+            A default value of 0 indicates that throttling is disabled.
+        </description>
+    </property>
+
+
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>/hadoop/1/hdfs/data,/hadoop/2/hdfs/data,/hadoop/3/hdfs/data,/hadoop/4/hdfs/data,/hadoop/5/hdfs/data,/hadoop/6/hdfs/data</value>
+    </property>
+
+    <property>
+        <name>dfs.hosts</name>
+        <value></value>
+        <description>Names a file that contains a list of hosts that are
+            permitted to connect to the namenode. The full pathname of the file
+            must be specified.  If the value is empty, all hosts are
+            permitted.</description>
+    </property>
+
+    <property>
+        <name>dfs.hosts.exclude</name>
+        <value></value>
+        <description>Names a file that contains a list of hosts that are
+            not permitted to connect to the namenode.  The full pathname of the
+            file must be specified.  If the value is empty, no hosts are
+            excluded.</description>
+    </property>
+
+    <property>
+        <name>dfs.blocksize</name>
+        <value>268435456</value>
+    </property>
+
+    <property>
+        <name>dfs.ls.limit</name>
+        <value>4096</value>
+        <description>
+            Limit the number of files printed by ls. If less or equal to
+            zero, at most DFS_LIST_LIMIT_DEFAULT (= 1000) will be printed.
+        </description>
+    </property>
+
+    <property>
+        <name>dfs.journalnode.edits.dir</name>
+        <value>/hadoop/2/hdfs/journalnode</value>
+    </property>
+
+    <property>
+        <name>dfs.journalnode.https-address</name>
+        <value>0.0.0.0:8481</value>
+    </property>
+
+    <property>
+        <name>dfs.journalnode.kerberos.internal.spnego.principal</name>
+        <value>HTTP/_HOST@TESS.DEV.HADOOP.EBAY.COM</value>
+    </property>
+
+    <property>
+        <name>dfs.journalnode.kerberos.principal</name>
+        <value>jn/_HOST@TESS.DEV.HADOOP.EBAY.COM</value>
+    </property>
+
+    <property>
+        <name>dfs.journalnode.keytab.file</name>
+        <value>/etc/security/keytabs/jn.service.keytab</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.acls.enabled</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.audit.log.async</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.kerberos.internal.spnego.principal</name>
+        <value>HTTP/_HOST@TESS.DEV.HADOOP.EBAY.COM</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.kerberos.principal</name>
+        <value>nn/_HOST@TESS.DEV.HADOOP.EBAY.COM</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.keytab.file</name>
+        <value>/etc/security/keytabs/nn.service.keytab</value>
+    </property>
+
+    <property>
+        <name>dfs.permissions.enabled</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.permissions.superusergroup</name>
+        <value>hadoop</value>
+    </property>
+
+    <property>
+        <name>dfs.qjournal.write-txns.timeout.ms</name>
+        <value>40000</value>
+    </property>
+
+    <property>
+        <name>dfs.web.authentication.kerberos.keytab</name>
+        <value>/etc/security/keytabs/spnego.service.keytab</value>
+    </property>
+
+    <property>
+        <name>dfs.web.authentication.kerberos.principal</name>
+        <value>*</value>
+    </property>
+
+    <property>
+        <name>dfs.webhdfs.enabled</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>fs.permissions.umask-mode</name>
+        <value>022</value>
+    </property>
+
+    <property>
+        <name>dfs.datanode.address</name>
+        <value>0.0.0.0:50010</value>
+        <description>
+            The datanode server address and port for data transfer, default 50010
+        </description>
+    </property>
+
+    <property>
+        <name>dfs.datanode.http.address</name>
+        <value>0.0.0.0:50075</value>
+        <description>
+            The datanode http server address and port. default 50075
+        </description>
+    </property>
+
+    <property>
+        <name>dfs.datanode.https.address</name>
+        <value>0.0.0.0:50475</value>
+    </property>
+
+    <property>
+        <name>dfs.datanode.ipc.address</name>
+        <value>0.0.0.0:50020</value>
+    </property>
+
+    <property>
+        <name>dfs.datanode.kerberos.principal</name>
+        <value>dn/_HOST@TESS.DEV.HADOOP.EBAY.COM</value>
+    </property>
+
+    <property>
+        <name>dfs.datanode.keytab.file</name>
+        <value>/etc/security/keytabs/dn.service.keytab</value>
+    </property>
+
+
+    <property>
+        <name>dfs.permissions.superusergroup</name>
+        <value>hadoop</value>
+        <description>The name of the group of super-users.
+            The value should be a single group name.
+        </description>
+    </property>
+
+    <property>
+        <name>dfs.hosts.exclude</name>
+        <value>/apache/hadoop/etc/hadoop/hdfs-exclude</value>
+    </property>
+
+
+    <property>
+        <name>dfs.hosts</name>
+        <value>/apache/hadoop/etc/hadoop/hosts</value>
+    </property>
+
+
+    <property>
+        <name>dfs.data.transfer.protection</name>
+        <value>privacy</value>
+    </property>
+
+    <property>
+        <name>dfs.http.policy</name>
+        <value>HTTPS_ONLY</value>
+    </property>
+
+    <property>
+        <name>dfs.https.port</name>
+        <value>50070</value>
+    </property>
+
+</configuration>

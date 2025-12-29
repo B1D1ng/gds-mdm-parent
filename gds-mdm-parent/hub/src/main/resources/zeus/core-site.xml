@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+    <property>
+        <name>hadoop.http.authentication.composite.default-non-browser-handler-type</name>
+        <value>kerberos</value>
+    </property>
+
+    <property>
+        <name>hadoop.http.authentication.kerberos.keytab</name>
+        <value>/etc/security/keytabs/spnego.service.keytab</value>
+    </property>
+
+    <property>
+        <name>hadoop.http.authentication.kerberos.principal</name>
+        <value>HTTP/_HOST@TESS.DEV.HADOOP.EBAY.COM</value>
+    </property>
+
+    <property>
+        <name>hadoop.security.auth_to_local</name>
+        <value>
+            RULE:[2:$1@$0]([rn]m@.*)s/.*/yarn/
+            RULE:[2:$1@$0](jhs@.*)s/.*/mapred/
+            RULE:[2:$1@$0]([nd]n@.*)s/.*/hdfs/
+            RULE:[2:$1@$0](hm@.*)s/.*/hbase/
+            RULE:[2:$1@$0](rs@.*)s/.*/hbase/
+            RULE:[1:$1]
+            RULE:[2:$1]
+            DEFAULT
+        </value>
+    </property>
+
+    <property>
+        <name>hadoop.security.authentication</name>
+        <value>kerberos</value>
+    </property>
+
+    <property>
+        <name>hadoop.security.authorization</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>hadoop.security.groups.cache.secs</name>
+        <value>3600</value>
+    </property>
+
+    <property>
+        <name>hadoop.ssl.hostname.verifier</name>
+        <value>ALLOW_ALL</value>
+    </property>
+
+
+
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://zeus</value>
+    </property>
+
+    <property>
+        <name>io.file.buffer.size</name>
+        <value>131072</value>
+    </property>
+
+    <property>
+        <name>io.compression.codecs</name>
+        <value>org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.SnappyCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.BZip2Codec</value>
+    </property>
+
+    <property>
+        <name>io.compression.codec.lzo.class</name>
+        <value>com.hadoop.compression.lzo.LzoCodec</value>
+    </property>
+
+    <property>
+        <name>net.topology.script.file.name</name>
+        <value></value>
+        <description> The script name that should be invoked to resolve DNS names to
+            NetworkTopology names. Example: the script would take host.foo.bar as an
+            argument, and return /rack1 as the output.
+        </description>
+    </property>
+
+    <property>
+        <name>fs.trash.interval</name>
+        <value>1440</value>
+    </property>
+
+    <property>
+        <description>
+            Is the registry enabled in the YARN Resource Manager?
+
+            If true, the YARN RM will, as needed.
+            create the user and system paths, and purge
+            service records when containers, application attempts
+            and applications complete.
+
+            If false, the paths must be created by other means,
+            and no automatic cleanup of service records will take place.
+        </description>
+        <name>hadoop.registry.rm.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <description>
+            List of hostname:port pairs defining the
+            zookeeper quorum binding for the registry
+        </description>
+        <name>hadoop.registry.zk.quorum</name>
+        <value>zeus-slc-zk-1.vip.hadoop.ebay.com:2181,zeus-slc-zk-2.vip.hadoop.ebay.com:2181,zeus-slc-zk-3.vip.hadoop.ebay.com:2181,zeus-slc-zk-4.vip.hadoop.ebay.com:2181,zeus-slc-zk-5.vip.hadoop.ebay.com:2181</value>
+    </property>
+
+    <property>
+        <name>ha.zookeeper.quorum</name>
+        <value>${hadoop.registry.zk.quorum}</value>
+    </property>
+
+    <property>
+        <name>hadoop.proxyuser.hive.hosts</name>
+        <value>*</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.hive.groups</name>
+        <value>*</value>
+    </property>
+
+    <property>
+        <name>hadoop.proxyuser.hadoop.hosts</name>
+        <value>*</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.hadoop.groups</name>
+        <value>*</value>
+    </property>
+
+    <property>
+        <name>hadoop.http.authentication.type</name>
+        <value>simple</value>
+        <description>
+            Defines authentication used for Oozie HTTP endpoint.
+            Supported values are: simple | kerberos | #AUTHENTICATION_HANDLER_CLASSNAME#
+        </description>
+    </property>
+    <property>
+        <name>dfs.namenode.audit.log.async</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>hadoop.rpc.protection</name>
+        <value>privacy</value>
+    </property>
+
+    <property>
+        <name>fs.s3a.endpoint</name>
+        <value>nuobject-playground.stratus.qa.ebay.com</value>
+    </property>
+    <property>
+        <name>fs.s3a.path.style.access</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>fs.s3a.connection.ssl.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>fs.s3a.access.key</name>
+        <value>playground-f74ae8c1-3869-4af3-bb1d-cbd4ef1066f0</value>
+    </property>
+    <property>
+        <name>fs.s3a.secret.key</name>
+        <value>ed49f95b-cbfc-4013-bda9-63abc000953b</value>
+    </property>
+
+    <property>
+        <name>hadoop.security.token.service.use_ip</name>
+        <value>false</value>
+    </property>
+
+    <property>
+        <name>ipc.client.connect.proactive.update.address</name>
+        <value>true</value>
+    </property>
+
+</configuration>

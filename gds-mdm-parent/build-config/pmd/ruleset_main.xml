@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="main"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
+	http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+    <description>PMD main rule set</description>
+
+    <exclude-pattern>.*/com/ebay/behavior/gds/schema/.*</exclude-pattern>
+
+    <!-- bestpractices -->
+    <rule ref="category/java/bestpractices.xml">
+        <exclude name="UnusedLocalVariable"/>
+        <exclude name="DoubleBraceInitialization"/>
+        <exclude name="GuardLogStatement"/>
+        <exclude name="UseVarargs"/>
+        <exclude name="AbstractClassWithoutAbstractMethod"/>
+        <exclude name="UnusedPrivateMethod"/>
+        <exclude name="SwitchStmtsShouldHaveDefault"/>
+    </rule>
+
+    <!-- codestyle -->
+    <rule ref="category/java/codestyle.xml">
+        <exclude name="MethodArgumentCouldBeFinal"/>
+        <exclude name="LocalVariableCouldBeFinal"/>
+        <exclude name="OnlyOneReturn"/>
+        <exclude name="AtLeastOneConstructor"/>
+        <exclude name="CallSuperInConstructor"/>
+        <exclude name="TooManyStaticImports"/>
+        <exclude name="ConfusingTernary"/>
+        <exclude name="UseDiamondOperator"/>
+        <exclude name="PackageCase"/>
+        <exclude name="GenericsNaming"/>
+        <exclude name="ConfusingTernary"/>
+        <exclude name="GenericsNaming"/>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/ShortMethodName">
+        <properties>
+            <property name="minimum" value="2" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/ShortClassName">
+        <properties>
+            <property name="minimum" value="3"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/ShortVariable">
+        <properties>
+            <property name="minimum" value="2"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/LongVariable">
+        <properties>
+            <property name="minimum" value="35"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/FieldNamingConventions">
+        <properties>
+            <property name="publicConstantPattern" value="[A-Z][A-Z_0-9]*"/>
+            <property name="constantPattern" value="[a-zA-Z_0-9]*"/>
+            <property name="enumConstantPattern" value="[A-Z][A-Za-z_0-9]*"/>
+            <property name="finalFieldPattern" value="[a-z][a-zA-Z0-9]*"/>
+            <property name="staticFieldPattern" value="[a-z][a-zA-Z0-9]*"/>
+            <property name="defaultFieldPattern" value="[a-z][a-zA-Z0-9]*"/>
+            <property name="exclusions" value="serialVersionUID|serialPersistentFields"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/LinguisticNaming">
+        <properties>
+            <property name="ignoredAnnotations" value="java.lang.Override"/>
+            <property name="checkBooleanMethod" value="true"/>
+            <property name="checkGetters" value="true"/>
+            <property name="checkSetters" value="false"/>
+            <property name="checkPrefixedTransformMethods" value="true"/>
+            <property name="checkTransformMethods" value="false"/>
+            <property name="booleanMethodPrefixes" value="is|has|can|have|will|should"/>
+            <property name="transformMethodNames" value="to|as"/>
+            <property name="checkFields" value="true"/>
+            <property name="checkVariables" value="true"/>
+            <property name="booleanFieldPrefixes" value="is|has|can|have|will|should"/>
+        </properties>
+    </rule>
+
+    <!-- design -->
+    <rule ref="category/java/design.xml">
+        <exclude name="FinalFieldCouldBeStatic"/>
+        <exclude name="UseObjectForClearerAPI"/>
+        <exclude name="DataClass"/>
+        <exclude name="ExcessiveImports"/>
+        <exclude name="SignatureDeclareThrowsException"/>
+        <exclude name="UseUtilityClass"/>
+        <exclude name="LawOfDemeter"/>
+        <exclude name="ImmutableField"/>
+        <exclude name="AvoidCatchingGenericException"/>
+        <exclude name="TooManyFields"/>
+        <exclude name="CyclomaticComplexity"/>
+        <exclude name="DataClass"/>
+        <exclude name="AbstractClassWithoutAnyMethod"/>
+    </rule>
+
+    <rule ref="category/java/design.xml/TooManyMethods">
+        <properties>
+            <property name="maxmethods" value="25"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/CognitiveComplexity">
+        <properties>
+            <property name="reportLevel" value="17" />
+        </properties>
+    </rule>
+
+    <!-- errorprone -->
+    <rule ref="category/java/errorprone.xml">
+        <exclude name="MissingSerialVersionUID"/>
+        <exclude name="DataflowAnomalyAnalysis"/>
+        <exclude name="ReturnEmptyCollectionRatherThanNull"/>
+        <exclude name="ConstructorCallsOverridableMethod"/>
+        <exclude name="AvoidFieldNameMatchingMethodName"/>
+    </rule>
+
+    <rule ref="category/java/errorprone.xml/AvoidDuplicateLiterals">
+        <properties>
+            <property name="maxDuplicateLiterals" value="3" />
+            <property name="minimumLength" value="2" />
+            <property name="skipAnnotations" value="true" />
+            <property name="exceptionList" value="" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/errorprone.xml/AvoidLiteralsInIfCondition">
+        <properties>
+            <property name="ignoreMagicNumbers" value="-1,0,1,2,100"/>
+        </properties>
+    </rule>
+
+    <!-- performance -->
+    <rule ref="category/java/performance.xml">
+        <exclude name="SimplifyStartsWith"/>
+        <exclude name="AvoidInstantiatingObjectsInLoops"/>
+    </rule>
+
+</ruleset>
